@@ -1,9 +1,9 @@
 import './App.css';
 import { Link, Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Home from './Components.Homepage.Home';
-import BasketMain from './Components.Basket.BasketMain';
-import DisplayItem from './Components.Item.DisplayItem';
+import Home from './Components/Homepage/Home.jsx';
+import BasketMain from './Components/Basket/BasketMain.jsx';
+import DisplayItem from './Components/Item/DisplayItem.jsx';
 
 
 function App() {
