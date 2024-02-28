@@ -1,5 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
+import { Link, Route, Routes, BrowserRouter as Router } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Home from './Components.Homepage.Home';
+import BasketMain from './Components.Basket.BasketMain';
+import DisplayItem from './Components.Item.DisplayItem';
+
 
 function App() {
   return (
@@ -28,8 +33,8 @@ function App() {
       <div >
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/basket' element={<Basket />} />
-          <Route path='/items' element={<Items />} />
+          <Route path='/basket' element={<BasketMain />} />
+          <Route path='/items' element={<DisplayItem />} />
         </Routes>
       </div>
 
