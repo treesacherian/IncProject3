@@ -1,13 +1,19 @@
+import { log } from "console";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router";
 
-function DisplayItem() {
+function DisplayItem(props) {
+    // console.log(props);
+    const navigate = useNavigate();
+
     return (
         <div id="itemCard">Item: {}
             <div>
-            Name: {} <br/>
-            Quantity: {} <br/>
-            Price: {} <br/>
+            Name: {props.name} <br/>
+            Quantity: {props.quantity} <br/>
+            Price: £{props.price} <br/>
             </div>
+            <button type="submit">Add to basket</button>
         </div>
     );
 }
@@ -21,4 +27,4 @@ DisplayItem.propTypes = {
 
 export default DisplayItem;
 
-{/* ffc = generates a function with return and export usc = same but with usestate  */}
+/* ffc = generates a function with return and export usc = same but with usestate  */
