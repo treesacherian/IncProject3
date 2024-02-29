@@ -1,4 +1,3 @@
-import { log } from "console";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router";
 
