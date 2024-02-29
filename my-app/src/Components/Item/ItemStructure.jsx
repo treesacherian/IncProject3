@@ -1,9 +1,8 @@
-import { log } from "console";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router";
 
-function DisplayItem(props) {
-    // console.log(props);
+function ItemStructure(props) {
+    console.log(props);
     const navigate = useNavigate();
 
     return (
@@ -18,13 +17,13 @@ function DisplayItem(props) {
     );
 }
 
-DisplayItem.propTypes = {
+ItemStructure.propTypes = {
     name: PropTypes.string.isRequired,
     Quantity: PropTypes.number.isRequired,
     Price: PropTypes.number.isRequired,
     id: PropTypes.number.isRequired
 }
 
-export default DisplayItem;
+export default ItemStructure;
 
 /* ffc = generates a function with return and export usc = same but with usestate  */
