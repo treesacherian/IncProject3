@@ -1,6 +1,6 @@
 function Modal() {
     <div>
-      windiw.onloaad = function(){ alert("Start Shopping")
+      window.onload = function(){ alert("Start Shopping")
       };
     </div>
   }

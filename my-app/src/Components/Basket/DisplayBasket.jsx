@@ -1,35 +1,31 @@
+import PropTypes from 'prop-types';
+
 function DisplayBasket() {
+
     return (
-      <div>
-        <button
-          class="btn btn-primary"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasRight"
-          aria-controls="offcanvasRight"
-        >
-          Toggle Cart
-        </button>
-  
-        <div
-          class="offcanvas offcanvas-end"
-          tabindex="-1"
-          id="offcanvasRight"
-          aria-labelledby="offcanvasRightLabel"
-        >
-          <div class="offcanvas-header">
-            <h5 id="offcanvasRightLabel">Cart</h5>
-            <button
-              type="button"
-              class="btn-close text-reset"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="offcanvas-body"></div>
+        <div className='col'>
+            <div className='card'>
+                <div className='card-body'>
+                    <h5 className='card-title'>Price: £{props.prc}</h5>
+                    <div className='card-text'>
+                        <ul className='list-group list-group-flush'>
+                            <li className='list-group-item'>  {props.name}</li>
+                            <li className='list-group-item'>  {props.quantity}</li>
+                        </ul>
+                        {/* <button className='btn btn-primary ' onClick={handleEdit}>Remove item</button>  */}
+                        {buttonDisplay()}
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     );
-  }
-  
-  export default DisplayBasket;
+}
+
+Property.propTypes = {
+    id: PropTypes.number.isRequired,
+    price: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    quantity: PropTypes.number.isRequired,
+}
+
+export default DisplayBasket;

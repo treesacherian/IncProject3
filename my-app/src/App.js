@@ -2,7 +2,7 @@ import './App.css';
 import { Link, Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './Components/Homepage/Home.jsx';
-import BasketMain from './Components/Basket/BasketMain.jsx';
+import DisplayBasket from './Components/Basket/DisplayBasket.jsx';
 import DisplayItem from './Components/Item/DisplayItem.jsx';
 import Logo from './Business.png';
 import React from 'react';
@@ -40,7 +40,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/items' element={<DisplayItem />} />
-          <Route path='/basket' element={<BasketMain />} />
+          <Route path='/basket' element={<DisplayBasket />} />
         </Routes>
       </div>
 
