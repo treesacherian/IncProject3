@@ -6,7 +6,7 @@ function ItemStructure(props) {
     const navigate = useNavigate();
 
     return (
-        <div id="itemCard">Item: {}
+        <div id="itemCard">
             <div>
             Name: {props.name} <br/>
             Quantity: {props.quantity} <br/>

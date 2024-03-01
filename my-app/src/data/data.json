@@ -23,6 +23,12 @@
       "quantity": "1",
       "price": "1",
       "id": 4
+    },
+    {
+      "name": "bean",
+      "quantity": "1",
+      "price": "1",
+      "id": 5
     }
   ]
 }
