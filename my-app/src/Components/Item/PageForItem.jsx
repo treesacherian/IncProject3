@@ -1,11 +1,22 @@
-import DisplayItem from "./DisplayItem";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import ItemDisplay from "./ItemDisplay";
 
 function PageForItem() {
+    function getItems() {
+        axios.get("http://localhost:3000/items")
+        .then((response)=>{setItems(response.data)})
+        .catch(console.log)
+    }
+    useEffect (()=>{getItems()},[])
+    const [items, setItems] = useState([])
+
+
     return ( 
         <div>
             <h1>Groceries</h1>
             <div id="ItemDisplay">
-                <DisplayItem/>
+                <ItemDisplay listItems={items}/>
             </div>
         </div>
      );

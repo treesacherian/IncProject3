@@ -5,7 +5,7 @@ function CreateItemPage() {
     return (
         <div>
             <h1>Create items</h1>
-            {/* CreateItem will go here */}
+                <CreateItem/>
         </div>
     )
 }

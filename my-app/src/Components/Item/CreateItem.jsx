@@ -7,16 +7,17 @@ function CreateItem() {
     const [quantity, setQuantity] = useState("");
     const [price, setPrice] = useState("");
     const navigate = useNavigate("");
+    
 
     return ( 
         <form onSubmit={e =>{
             e.preventDefault()
-            axios.post("http://localhost:3000/item", {name, quantity, price})
+            axios.post("http://localhost:3000/items", {name, quantity, price})
                 .then(response => {
                     setName("");
                     setQuantity("");
                     setPrice("");
-                    navigate("/item");
+                    navigate("/items");
                 })
                 .catch(err => console.error(err))
         }}>
