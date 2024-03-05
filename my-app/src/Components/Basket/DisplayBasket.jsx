@@ -1,31 +1,24 @@
-import PropTypes from 'prop-types';
+import BasketStructure from "./ItemStructure";
 
-function DisplayBasket() {
+function DisplayBasket(props) {
+    const basketList = []
 
-    return (
-        <div className='col'>
-            <div className='card'>
-                <div className='card-body'>
-                    <h5 className='card-title'>Price: £{props.prc}</h5>
-                    <div className='card-text'>
-                        <ul className='list-group list-group-flush'>
-                            <li className='list-group-item'>  {props.name}</li>
-                            <li className='list-group-item'>  {props.quantity}</li>
-                        </ul>
-                        {/* <button className='btn btn-primary ' onClick={handleEdit}>Remove item</button>  */}
-                        {buttonDisplay()}
-                    </div>
-                </div>
-            </div>
+    for (const item of props.listItems) {
+        console.log("Items:", item);
+        basketList.push(
+            <BasketStructure
+                key={item.id}
+                name={item.name}
+                quantity={item.quantity}
+                price={item.price}
+            />
+        )
+    }
+    return ( 
+        <div>
+          {basketList}  
         </div>
-    );
-}
-
-Property.propTypes = {
-    id: PropTypes.number.isRequired,
-    price: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-    quantity: PropTypes.number.isRequired,
+     );
 }
 
 export default DisplayBasket;

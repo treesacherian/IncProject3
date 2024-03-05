@@ -21,7 +21,8 @@ ItemStructure.propTypes = {
     name: PropTypes.string.isRequired,
     Quantity: PropTypes.number.isRequired,
     Price: PropTypes.number.isRequired,
-    id: PropTypes.number.isRequired
+    id: PropTypes.number.isRequired,
+    basketID: PropTypes.number
 }
 
 export default ItemStructure;
