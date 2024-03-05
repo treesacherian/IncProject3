@@ -4,8 +4,8 @@ import axios from "axios";
 
 function CreateItem() {
     const [name, setName] = useState("");
-    const [quantity, setQuantity] = useState("");
-    const [price, setPrice] = useState("");
+    const [quantity, setQuantity] = useState();
+    const [price, setPrice] = useState();
     const navigate = useNavigate("");
     
 
@@ -15,8 +15,8 @@ function CreateItem() {
             axios.post("http://localhost:3000/items", {name, quantity, price})
                 .then(response => {
                     setName("");
-                    setQuantity("");
-                    setPrice("");
+                    setQuantity();
+                    setPrice();
                     navigate("/items");
                 })
                 .catch(err => console.error(err))
@@ -29,7 +29,12 @@ function CreateItem() {
                     </div>
                     <div className="col ">
                         <div label htmlfor="Quantity" className="form-label ">Quantity</div>
-                        <input type="number" id="quantity" size="5" value={quantity} onChange={e => setQuantity(e.target.value)} required/>
+                        <input type="number" 
+                        id="quantity" 
+                        size="5" 
+                        value={quantity} 
+                        onChange={e => setQuantity(e.target.value)} 
+                        required/>
                     </div>
                     <div className="col">
                         <div label htmlfor="price" className="form-label ">Price</div>

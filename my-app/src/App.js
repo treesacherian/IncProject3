@@ -2,20 +2,18 @@ import './App.css';
 import { Link, Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './Components/Homepage/Home.jsx';
-import BasketMain from './Components/Basket/BasketMain.jsx';
-import DisplayItem from './Components/Item/ItemStructure.jsx';
+import ItemDisplay from './Components/Item/ItemDisplay.jsx';
 import PageForItem from './Components/Item/PageForItem.jsx';
 import CreateItemPage from './Components/Item/CreateItemPage.jsx';
+import BasketPage from './Components/Basket/BasketPage.jsx';
+import BasketDisplay from "./Components/Basket/BasketDisplay.jsx"
 import Logo from './Business.png';
 import React from 'react';
 import { useState } from "react";
-import Modal from './Components/Homepage/Modal.jsx';
-
 
 function App() {
   return (
     <Router>
-      {/* <Modal /> */}
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid fixed-top ">
         <Link to="/">
@@ -45,10 +43,11 @@ function App() {
       <div >
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/basket' element={<BasketMain />} />
+          <Route path='/basket' element={<BasketPage />} />
           <Route path='/items' element={<PageForItem />} />
           <Route path='/createitems' element={<CreateItemPage/>} />
-          <Route path='/items' element={<DisplayItem />} />
+          <Route path='/items' element={<ItemDisplay />} />
+          <Route path='/basket' element={<BasketDisplay />} />
         </Routes>
       </div>
 

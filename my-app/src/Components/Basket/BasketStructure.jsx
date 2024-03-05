@@ -1,29 +1,24 @@
-import PropTypes from 'prop-types';
+import React from "react";
 
-function BasketStructure(props) {
-
-    return (
-        <div className='col'>
-            <div className='card'>
-                <div className='card-body'>
-                    <h5 className='card-title'>Price: £{props.price}</h5>
-                    <div className='card-text'>
-                        <ul className='list-group list-group-flush'>
-                            <li className='list-group-item'>  {props.name}</li>
-                            <li className='list-group-item'>  {props.quantity}</li>
-                        </ul>
-                        {/* <button className='btn btn-primary ' onClick={handleEdit}>Remove item</button>  */}
-                        {/* {buttonDisplay()} */}
-                    </div>
-                </div>
-            </div>
+function BasketStructure({ id, name, items }) {
+  return (
+    <div>
+      <p>ID: {id}</p>
+      <p>Name: {name}</p>
+      {items && items.length > 0 && (
+        <div>
+          <strong>Items:</strong>
+          <ul>
+            {items.map((item) => (
+              <li key={item.id}>
+                {item.name}, Quantity: {item.quantity}, Price: {item.price}
+              </li>
+            ))}
+          </ul>
         </div>
-    );
-}
-
-BasketStructure.propTypes = {
-    id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired
+      )}
+    </div>
+  );
 }
 
 export default BasketStructure;
