@@ -29,6 +29,9 @@ function CreateBasket() {
   const BasketExists = baskets.length > 0;
 
   return (
+  <div className="card-group d-inline-flex padding" style={{ padding: "10px" }}>
+    <div class="card border-dark mb-3" style={{ width: "17%" }}>
+      
     <form onSubmit={handleSubmit}>
       <div className="container" id="CreateBasket">
         <div className="row">
@@ -55,6 +58,8 @@ function CreateBasket() {
         </button>
       </div>
     </form>
+    </div>
+  </div>
   );
 }
 

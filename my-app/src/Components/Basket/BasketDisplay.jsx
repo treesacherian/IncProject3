@@ -20,22 +20,27 @@ function BasketsDisplay() {
 
   return (
     <div>
-      <h2>Basket Summary</h2>
-
-      {baskets.map(basket => (
-        <div key={basket.id}>
-          <h3>{basket.name}</h3>
-          <ul>
-            {basket.items.map(basketItem => (
-              <li key={basketItem.id}>
-                {basketItem.name} - Price: £{basketItem.price}
-              </li>
-            ))}
-          </ul>
-          <p>Total Price: £{calculateTotalPrice(basket.items)}</p>
+      <div className="card-group d-inline-flex padding" style={{ padding: "10px" }}>
+        <div class="card border-dark mb-3" style={{ width: "17%", textAlign: "center" }}>
+          <div class="card-body"></div>
+          {baskets.map(basket => (
+            <div key={basket.id}>
+              <h3>{basket.name}</h3>
+              <div>
+                {basket.items.map(basketItem => (
+                  <div key={basketItem.id}>
+                    {basketItem.name} - Price: £{basketItem.price}
+                  </div>
+                ))}
+                <br/>
+              </div>
+              <p>Total Price: £{calculateTotalPrice(basket.items)}</p>
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
     </div>
+
   );
 }
 
