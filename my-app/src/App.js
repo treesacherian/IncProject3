@@ -46,8 +46,6 @@ function App() {
           <Route path='/basket' element={<BasketPage />} />
           <Route path='/items' element={<PageForItem />} />
           <Route path='/createitems' element={<CreateItemPage/>} />
-          <Route path='/items' element={<ItemDisplay />} />
-          <Route path='/basket' element={<BasketDisplay />} />
         </Routes>
       </div>
 

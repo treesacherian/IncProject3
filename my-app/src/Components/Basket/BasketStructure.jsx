@@ -11,7 +11,7 @@ function BasketStructure({ id, name, items }) {
           <ul>
             {items.map((item) => (
               <li key={item.id}>
-                {item.name}, Quantity: {item.quantity}, Price: {item.price}
+                {item.name}, Quantity: {item.quantity}, Price: £{item.price}
               </li>
             ))}
           </ul>
