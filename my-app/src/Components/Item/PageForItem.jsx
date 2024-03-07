@@ -3,23 +3,26 @@ import axios from "axios";
 import ItemDisplay from "./ItemDisplay";
 
 function PageForItem() {
-    function getItems() {
-        axios.get("http://localhost:3000/items")
-        .then((response)=>{setItems(response.data)})
-        .catch(console.log)
-    }
-    useEffect (()=>{getItems()},[])
-    const [items, setItems] = useState([])
+  function getItems() {
+    axios.get("http://localhost:8088/item/get")
+      .then((response) => { setItems(response.data) })
+      .catch(console.log);
+  }
 
+  useEffect(() => {
+    getItems();
+  }, []);
 
-    return ( 
-        <div>
-            <h1>Groceries</h1>
-            <div id="ItemDisplay">
-                <ItemDisplay listItems={items}/>
-            </div>
-        </div>
-     );
+  const [items, setItems] = useState([]);
+
+  return (
+    <div>
+      <h1>Groceries</h1>
+      <div id="ItemDisplay">
+        <ItemDisplay listItems={items} />
+      </div>
+    </div>
+  );
 }
 
 export default PageForItem;
