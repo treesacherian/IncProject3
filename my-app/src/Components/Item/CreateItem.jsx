@@ -34,7 +34,7 @@ function CreateItem() {
                 </div>
                 <br />
                 <div>
-                    <button type="submit" id="SubmitCreateItem"> Submit </button>
+                    <button type="submit" id="SubmitCreateItem" className="btn btn-success"> Submit </button>
                 </div>
 
             </form>

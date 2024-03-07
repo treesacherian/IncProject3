@@ -14,9 +14,9 @@ function Login() {
         <br />
         <input type="password" placeholder="Password" />
         <br />
-        <button onClick={() => {
+        <button className="btn btn-primary"onClick={() => {
           navigate("/home");
-        }}>Click me</button>
+        }}>Sign in</button>
       </form>
     </>
   );

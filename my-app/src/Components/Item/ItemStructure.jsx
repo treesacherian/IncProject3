@@ -24,16 +24,16 @@ function ItemStructure(props) {
   };
 
   return (
-    <div id="itemCard" className="card-group d-inline-flex padding" style={{padding: "10px"}}>
+    <div id="itemCard" className="card-group d-inline-flex padding" style={{padding: "20px"}}>
       <div class="card border-dark mb-3" style={{width: "17%"}}>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Name: {props.name} </li>
           <li class="list-group-item">Price: £{props.price} </li>
         </ul>
-      <button type="button" onClick={handleAddToBasket}>
+      <button type="button" onClick={handleAddToBasket} className="btn btn-success ">
         Add to basket
       </button>
-      <button type="button" onClick={deleteItem}>Delete</button>
+      <button type="button" onClick={deleteItem} className="btn btn-danger">Delete</button>
       </div>
     </div>
   );

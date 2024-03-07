@@ -37,10 +37,11 @@ function CreateBasket() {
         <div className="row">
           <div className="col">
             <div label htmlFor="name" className="form-label">
-              Name
+              <h4>Create your basket</h4>
             </div>
             <input
               type="text"
+              placeholder="Enter basket name here"
               id="name"
               size="20"
               value={name}
@@ -53,7 +54,7 @@ function CreateBasket() {
       </div>
       <br />
       <div>
-        <button type="submit" id="SubmitCreateBasket" disabled={BasketExists}>
+        <button type="submit" id="SubmitCreateBasket" disabled={BasketExists} className="btn btn-success" style={{textAlign: "center"}}>
           Submit
         </button>
       </div>

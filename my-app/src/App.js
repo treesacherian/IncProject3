@@ -27,7 +27,7 @@ function App() {
                 <Link class="nav-item nav-link active" to="/">Login</Link>
               </li>
               <li class="nav-item">
-                <Link className="nav-item nav-link active" to='/'>Home</Link>
+                <Link className="nav-item nav-link active" to='/home'>Home</Link>
               </li>
               <li class="nav-item">
                 <Link className="nav-item nav-link active" to='/items'>Items</Link>

@@ -5,7 +5,7 @@ import BasketDisplay from "./BasketDisplay";
 function BasketPage() {
   return (
     <div>
-      <h1>Basket Page</h1>
+      <h1>Your Basket</h1>
         <CreateBasket/>
         <BasketDisplay />
     </div>
