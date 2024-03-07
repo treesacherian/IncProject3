@@ -15,8 +15,16 @@ function ItemStructure(props) {
       .catch((error) => alert('Item has already been added to the basket '));
   };
 
+  const deleteItem = () => {
+    axios
+      .delete(`http://localhost:8088/item/delete/${props.id}`)
+      .then(() => {
+      })
+      .catch((error) => alert('Item has already been deleted '));
+  };
+
   return (
-    <div id="itemCard" className="card-group d-inline-flex padding" style={{padding: "10px"}}className="card-group d-inline-flex padding" style={{padding: "10px"}}>
+    <div id="itemCard" className="card-group d-inline-flex padding" style={{padding: "10px"}}>
       <div class="card border-dark mb-3" style={{width: "17%"}}>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Name: {props.name} </li>
@@ -25,6 +33,7 @@ function ItemStructure(props) {
       <button type="button" onClick={handleAddToBasket}>
         Add to basket
       </button>
+      <button type="button" onClick={deleteItem}>Delete</button>
       </div>
     </div>
   );

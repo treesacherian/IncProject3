@@ -29,7 +29,7 @@ function BasketsDisplay() {
               <div>
                 {basket.items.map(basketItem => (
                   <div key={basketItem.id}>
-                    {basketItem.name} - Price: £{basketItem.price}
+                    {basketItem.name} - Price: £{basketItem.price} 
                   </div>
                 ))}
                 <br/>

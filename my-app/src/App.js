@@ -32,11 +32,11 @@ function App() {
               <li class="nav-item">
                 <Link className="nav-item nav-link active" to='/items'>Items</Link>
               </li>
-              <li class="nav-link ">
-                <Link className="nav-item nav-link active" to='/createitems'>Create Items</Link>
-              </li>
               <li class="nav-item">
                 <Link className="nav-item nav-link active" to='/basket'>Basket</Link>
+              </li>
+              <li class="nav-item ">
+                <Link className="nav-item nav-link active" to='/createitems'>Add Items</Link>
               </li>
           </div>
           </div>
