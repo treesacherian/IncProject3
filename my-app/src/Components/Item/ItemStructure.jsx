@@ -24,11 +24,11 @@ function ItemStructure(props) {
   };
 
   return (
-    <div className="d-inline-flex" style={{ marginLeft: "20px", maxWidth: "50%" }}>
+    <div className="d-inline-flex" style={{ margin: "20px", maxWidth: "50%" }}>
     <div id="itemCard" className="col">
-      <div class="card" >
-        <div className="card-body" >
-        <img id="image" src={props.image} alt="N/A"></img>
+      <div class="card">
+        <div className="card-body">
+        <img id="image" src={props.image} alt="N/A" style={{width: "200px", height: "200px"}}></img>
         <ul class="list-group list-group-flush card-text">
           <li class="list-group-item">Name: {props.name} </li>
           <li class="list-group-item">Price: £{props.price} </li>
