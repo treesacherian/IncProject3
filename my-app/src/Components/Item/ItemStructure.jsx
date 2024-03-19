@@ -24,17 +24,22 @@ function ItemStructure(props) {
   };
 
   return (
-    <div id="itemCard" className="card-group d-inline-flex padding" style={{padding: "20px"}}>
-      <div class="card border-dark mb-3" style={{width: "17%"}}>
-        <ul class="list-group list-group-flush">
+    <div className="d-inline-flex" style={{ marginLeft: "20px", maxWidth: "50%" }}>
+    <div id="itemCard" className="col">
+      <div class="card" >
+        <div className="card-body" >
+        <img id="image" src={props.image} alt="N/A"></img>
+        <ul class="list-group list-group-flush card-text">
           <li class="list-group-item">Name: {props.name} </li>
           <li class="list-group-item">Price: £{props.price} </li>
         </ul>
-      <button type="button" onClick={handleAddToBasket} className="btn btn-success ">
-        Add to basket
-      </button>
-      <button type="button" onClick={deleteItem} className="btn btn-danger">Delete</button>
+        <button type="button" onClick={handleAddToBasket} className="btn btn-success ">
+          Add to basket
+        </button>
+        <button type="button" onClick={deleteItem} className="btn btn-danger">Delete</button>
+        </div>
       </div>
+    </div>
     </div>
   );
 }
@@ -44,6 +49,7 @@ ItemStructure.propTypes = {
   quantity: PropTypes.number.isRequired,
   price: PropTypes.number.isRequired,
   id: PropTypes.number.isRequired,
+  image: PropTypes.string
 };
 
 export default ItemStructure;
