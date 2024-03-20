@@ -11,7 +11,7 @@ import Login from './Components/Homepage/Login.jsx';
 
 function App() {
   return (
-  <div class="p-3 mb-2 text-dark" style={{ overflow: "auto" }}>
+  <div style={{ overflow: "auto" }}>
     <Router>
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand" href="#"></a>

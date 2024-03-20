@@ -1,11 +1,6 @@
 function Home() {
     return (
-        <div>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
+        <div style={{paddingTop:"30px"}}>
             <h1>"This is a shop apparently”</h1>
         </div>
     );
