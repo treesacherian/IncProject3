@@ -4,7 +4,9 @@ function BasketStructure({ id, name, items, image }) {
   return (
     <div>
       <p>ID: {id}</p>
-      <img src={image}>Image: </img>
+      <img src={image} alt="placeholder picture of a product">
+        Image:{" "}
+      </img>
       <p>Name: {name}</p>
       {items && items.length > 0 && (
         <div>
@@ -13,7 +15,7 @@ function BasketStructure({ id, name, items, image }) {
             {items.map((item) => (
               <li key={item.id}>
                 {item.name}, Quantity: {item.quantity}, Price: £{item.price},
-                Image: {item.image} 
+                Image: {item.image}
               </li>
             ))}
           </ul>

@@ -12,34 +12,48 @@ function ItemStructure(props) {
       .then(() => {
         navigate("/items");
       })
-      .catch((error) => alert('Item has already been added to the basket '));
+      .catch((error) => alert("Item has already been added to the basket "));
   };
 
   const deleteItem = () => {
     axios
       .delete(`http://localhost:8088/item/delete/${props.id}`)
-      .then(() => {
-      })
-      .catch((error) => alert('Item has already been deleted '));
+      .then(() => {})
+      .catch((error) => alert("Item has already been deleted "));
   };
 
   return (
     <div className="d-inline-flex" style={{ margin: "20px", maxWidth: "50%" }}>
-    <div id="itemCard" className="col">
-      <div class="card">
-        <div className="card-body">
-        <img id="image" src={props.image} alt="N/A" style={{width: "200px", height: "200px"}}></img>
-        <ul class="list-group list-group-flush card-text">
-          <li class="list-group-item">Name: {props.name} </li>
-          <li class="list-group-item">Price: £{props.price} </li>
-        </ul>
-        <button type="button" onClick={handleAddToBasket} className="btn btn-success ">
-          Add to basket
-        </button>
-        <button type="button" onClick={deleteItem} className="btn btn-danger">Delete</button>
+      <div id="itemCard" className="col">
+        <div class="card">
+          <div className="card-body">
+            <img
+              id="image"
+              src={props.image}
+              alt="picture placeholder"
+              style={{ width: "200px", height: "200px" }}
+            ></img>
+            <ul class="list-group list-group-flush card-text">
+              <li class="list-group-item">Name: {props.name} </li>
+              <li class="list-group-item">Price: £{props.price} </li>
+            </ul>
+            <button
+              type="button"
+              onClick={handleAddToBasket}
+              className="btn btn-success "
+            >
+              Add to basket
+            </button>
+            <button
+              type="button"
+              onClick={deleteItem}
+              className="btn btn-danger"
+            >
+              Delete
+            </button>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   );
 }
@@ -49,7 +63,7 @@ ItemStructure.propTypes = {
   quantity: PropTypes.number.isRequired,
   price: PropTypes.number.isRequired,
   id: PropTypes.number.isRequired,
-  image: PropTypes.string
+  image: PropTypes.string,
 };
 
 export default ItemStructure;
