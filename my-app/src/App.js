@@ -8,6 +8,7 @@ import BasketPage from "./Components/Basket/BasketPage.jsx";
 import Logo from "./Business.png";
 import React from "react";
 import Login from "./Components/Homepage/Login.jsx";
+import EditItem from "./Components/Item/EditItem.jsx"
 
 function App() {
   return (
@@ -60,18 +61,21 @@ function App() {
               </ul>
             </div>
           </div>
-        </nav>
-        <div>
-          <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/basket" element={<BasketPage />} />
-            <Route path="/items" element={<PageForItem />} />
-            <Route path="/createitems" element={<CreateItemPage />} />
-          </Routes>
-        </div>
-      </Router>
-    </div>
+          </div>
+      </nav>
+      <div >
+        <Routes>
+          <Route path='/' element={<Login />} />
+          <Route path='/home' element={<Home />} />
+          <Route path='/basket' element={<BasketPage />} />
+          <Route path='/items' element={<PageForItem />} />
+          <Route path='/createitems' element={<CreateItemPage/>} />
+          <Route path="/editItem/:id" element={<EditItem/>}/>
+        </Routes>
+      </div>
+
+    </Router>
+  </div>
   );
 }
 
