@@ -37,11 +37,12 @@ function BasketsDisplay() {
               <div>
                 {basket.items.map(basketItem => (
                   <div key={basketItem.id}>
+                    <img style={{height:"100px", margin:"15px"}} src={basketItem.image}></img>
                     {basketItem.name} - Price: £{basketItem.price} 
                   </div>
                 ))}
                 <br/>
-              </div>
+                </div>
               <p>Total Price: £{calculateTotalPrice(basket.items)}</p>
             </div>
           ))}

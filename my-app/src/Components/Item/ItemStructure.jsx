@@ -6,6 +6,10 @@ import axios from "axios";
 function ItemStructure(props) {
   const navigate = useNavigate();
 
+  const handleEdit = () => {
+    navigate("/editItem/" +props.id);
+  }
+
   const handleAddToBasket = () => {
     axios
       .patch(`http://localhost:8088/item/add/${props.id}/1`)
@@ -23,6 +27,13 @@ function ItemStructure(props) {
       .catch((error) => alert('Item has already been deleted '));
   };
 
+  const editItem = () => {
+    axios.put(`http://localhost:8088/item/update/${props.id}`)
+    .then (() => {
+    })
+    .catch((error) => alert('Edit item'))
+  }
+
   return (
     <div className="d-inline-flex" style={{ margin: "20px", maxWidth: "50%" }}>
     <div id="itemCard" className="col">
@@ -37,6 +48,7 @@ function ItemStructure(props) {
           Add to basket
         </button>
         <button type="button" onClick={deleteItem} className="btn btn-danger">Delete</button>
+        <button type="button" onClick={handleEdit} className="btn btn-primary">Edit</button>
         </div>
       </div>
     </div>

@@ -8,6 +8,10 @@ function CreateItem() {
     const [image, setImage] = useState("");
     const navigate = useNavigate("");
 
+    function ItemQuantity() {
+
+    }
+
 
     return (
         <div className="card-group d-inline-flex padding">
@@ -17,7 +21,7 @@ function CreateItem() {
                     .then(response => {
                         setName("");
                         setPrice();
-                        setImage("");
+                        setImage();
                         navigate("/items");
                     })
                     .catch(err => console.error(err))
@@ -43,6 +47,14 @@ function CreateItem() {
                                 required
                             />
                         </div>
+                        {/* <div>
+                            <div label htmlfor="quantity" className="form-label">Quantity</div>
+                            <input 
+                            type="number"
+                            id="quantity"
+                            
+                            />
+                        </div> */}
                     </div>
                 </div>
                 <br />

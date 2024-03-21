@@ -8,10 +8,11 @@ import BasketPage from './Components/Basket/BasketPage.jsx';
 import Logo from './Business.png';
 import React from 'react';
 import Login from './Components/Homepage/Login.jsx';
+import EditItem from "./Components/Item/EditItem.jsx"
 
 function App() {
   return (
-  <div class="p-3 mb-2 bg-warning text-dark" style={{ overflow: "auto" }}>
+  <div class="p-3 mb-2 text-dark" style={{ overflow: "auto" }}>
     <Router>
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand" href="#"></a>
@@ -48,6 +49,7 @@ function App() {
           <Route path='/basket' element={<BasketPage />} />
           <Route path='/items' element={<PageForItem />} />
           <Route path='/createitems' element={<CreateItemPage/>} />
+          <Route path="/editItem/:id" element={<EditItem/>}/>
         </Routes>
       </div>
 
