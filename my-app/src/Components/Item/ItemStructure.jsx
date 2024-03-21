@@ -30,15 +30,14 @@ function ItemStructure(props) {
       .then(() => {
         navigate("/items");
       })
-      .catch((error) => alert('Item has already been added to the basket '));
+      .catch((error) => alert("Item has already been added to the basket "));
   };
 
   const deleteItem = () => {
     axios
       .delete(`http://localhost:8088/item/delete/${props.id}`)
-      .then(() => {
-      })
-      .catch((error) => alert('Item has already been deleted '));
+      .then(() => {})
+      .catch((error) => alert("Item has already been deleted "));
   };
 
   //prefills input field in edit popup with existing information
@@ -132,7 +131,6 @@ function getItems() {
         </div>
       </div>
     </div>
-    </div>
   );
 }
 
@@ -141,7 +139,7 @@ ItemStructure.propTypes = {
   quantity: PropTypes.number.isRequired,
   price: PropTypes.number.isRequired,
   id: PropTypes.number.isRequired,
-  image: PropTypes.string
+  image: PropTypes.string,
 };
 
 export default ItemStructure;

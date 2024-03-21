@@ -1,13 +1,12 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function CreateItem() {
-    const [name, setName] = useState("");
-    const [price, setPrice] = useState();
-    const [image, setImage] = useState("");
-    const navigate = useNavigate("");
-
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState();
+  const [image, setImage] = useState("");
+  const navigate = useNavigate("");
     function ItemQuantity() {
 
     }
@@ -63,9 +62,8 @@ function CreateItem() {
                 </div>
 
             </form>
-        </div>
-
-    );
+    </div>
+  );
 }
 
 export default CreateItem;
