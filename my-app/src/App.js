@@ -38,11 +38,6 @@ function App() {
             <div class="navbar-nav">
               <ul style={{ display: "flex", padding: "10px" }}>
                 <li class="nav-item">
-                  <Link class="nav-item nav-link active" to="/">
-                    Login
-                  </Link>
-                </li>
-                <li class="nav-item">
                   <Link className="nav-item nav-link active" to="/home">
                     Home
                   </Link>

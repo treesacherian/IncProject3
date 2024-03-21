@@ -35,6 +35,7 @@ function BasketsDisplay() {
                 <img
                   style={{ height: "100px", margin: "15px" }}
                   src={basketItem.image}
+                  alt="placeholder text"
                 ></img>
                 {basketItem.name} - Price: £{basketItem.price}
               </div>

@@ -32,6 +32,7 @@ function CreateItem() {
                 type="text"
                 id="name"
                 size="20"
+                aria-label="item name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
@@ -45,6 +46,7 @@ function CreateItem() {
                 type="number"
                 id="price"
                 size="5"
+                aria-label="item price"
                 step="0.01"
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
@@ -59,6 +61,7 @@ function CreateItem() {
                 size=""
                 type="src"
                 id="image"
+                aria-label="item image"
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
                 required
