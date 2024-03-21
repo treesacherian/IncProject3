@@ -61,7 +61,6 @@ function App() {
               </ul>
             </div>
           </div>
-          </div>
       </nav>
       <div >
         <Routes>

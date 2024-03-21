@@ -131,6 +131,7 @@ function getItems() {
         </div>
       </div>
     </div>
+  </div>
   );
 }
 
