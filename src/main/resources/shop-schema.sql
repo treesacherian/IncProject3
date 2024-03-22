@@ -8,7 +8,7 @@ CREATE TABLE `basket` (
 CREATE TABLE `item` (
 	`id` INT PRIMARY KEY AUTO_INCREMENT,
 	`name` VARCHAR,
-	`quantity` DOUBLE,
+	`image` VARCHAR,
 	`price` DOUBLE,
 	`basket_id` INT,
 	FOREIGN KEY (`basket_id`) REFERENCES `basket` (`id`)

@@ -130,7 +130,7 @@ public class IncP1Testing {
  
 		WebElement typeName = this.driver.findElement(By.cssSelector("#name"));
 
-		typeName.sendKeys("Milk");
+		typeName.sendKeys("Beans");
  
 		WebElement ClickPrice = this.driver.findElement(By.cssSelector("#price"));
 
@@ -142,13 +142,16 @@ public class IncP1Testing {
  
 		WebElement typeImage = this.driver.findElement(By.cssSelector("#image"));
 
-		typeImage.sendKeys("https://cdn.dribbble.com/users/387221/screenshots/6584182/free-milk-carton-box-packaging-mockup-psd_4x.jpg");
+		typeImage.sendKeys("https://assets.iceland.co.uk/i/iceland/heinz_baked_beans_415g_9104_T596.jpg?$pdpzoom$");
 		
 		WebElement ClickSubmit = this.driver.findElement(By.cssSelector("#SubmitCreateItem"));
 
 		ClickSubmit.click();
  
 		Thread.sleep(5000);
+		
+		WebElement confirmItem = this.driver.findElement(By.cssSelector("#itemCard > div > div > ul > li:nth-child(1)"));
+		Assertions.assertEquals(true, confirmItem.getText().contains("Beans"));
  
 	}
  
