@@ -29,11 +29,11 @@ function CreateItem() {
                     <div className="row">
                         <div className="col">
                             <div label htmlfor="name" className="form-label ">Name</div>
-                            <input type="text" id="name" size="20" value={name} onChange={e => setName(e.target.value)} required />
+                            <input type="text" id="name" size="20" value={name} onChange={e => setName(e.target.value)} required  class="form-control"/>
                         </div>
                         <div className="col">
                             <div label htmlfor="price" className="form-label ">Price</div>
-                            <input type="number" id="price" size="5" step="0.01" value={price} onChange={e => setPrice(e.target.value)} required />
+                            <input type="number" id="price" size="5" step="0.01" value={price} onChange={e => setPrice(e.target.value)} required class="form-control"/>
                         </div>
                         <div className="col">
                             <div label htmlfor="image" className="form-label">Image</div>
@@ -44,6 +44,7 @@ function CreateItem() {
                                 value={image}
                                 onChange={e => setImage(e.target.value)}
                                 required
+                                class="form-control"
                             />
                         </div>
                         {/* <div>
@@ -58,7 +59,7 @@ function CreateItem() {
                 </div>
                 <br />
                 <div>
-                    <button type="submit" id="SubmitCreateItem" className="btn btn-success"> Submit </button>
+                    <button type="submit" id="SubmitCreateItem" className="btn btn-success col-2 row-2"> Submit </button>
                 </div>
 
             </form>

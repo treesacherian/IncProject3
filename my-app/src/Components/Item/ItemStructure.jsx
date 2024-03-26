@@ -102,28 +102,37 @@ function getItems() {
                 e.preventDefault();
                 editItem();
             }}>
-                <label htmlFor="itemName">Item Name</label>
+              <div class="mb-3 ">
+                <label htmlFor="itemName" class="form-label">Item Name</label>
                 <input
                     type="text"
                     onChange={(e) => setName(e.target.value)}
                     id="itemName"
                     value={name}
+                    class="form-control"
                 />
-                <label htmlFor="itemPrice">Price</label>
+                </div>
+                <div class="mb-3 ">
+                <label htmlFor="itemPrice" class="form-label">Price</label>
                 <input
                     type="number" 
                     onChange={(e) => setPrice(e.target.value)}
                     id="itemPrice"
                     value={price}
+                    class="form-control"
                     />
-                <label htmlFor="itemImage">Image</label>
+                </div>
+                <div class="mb-3 ">
+                <label htmlFor="itemImage" class="form-label">Image</label>
                 <input 
                 type="src" 
                 onChange={(e) => setImage(e.target.value)}
                 id="itemImage"
                 value={image}
+                class="form-control"
                 />
-                <button type="submit" onClick={handleClose}>Submit</button>
+                </div>
+                <button type="submit" onClick={handleClose} class="btn btn-success ">Submit</button>
             </form>
           </Modal.Body>
         </Modal>
