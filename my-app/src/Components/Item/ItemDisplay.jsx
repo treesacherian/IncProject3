@@ -4,7 +4,7 @@ import ItemStructure from "./ItemStructure";
 
 function ItemDisplay({ listItems }) {
   return (
-    <div>
+    <>
       {listItems.map((item) => (
         <ItemStructure
           key={item.id}
@@ -14,7 +14,7 @@ function ItemDisplay({ listItems }) {
           image={item.image}
         />
       ))}
-    </div>
+    </>
   );
 }
 
