@@ -4,16 +4,17 @@ import ItemStructure from "./ItemStructure";
 
 function ItemDisplay({ listItems }) {
   return (
-    <div>
+    <>
       {listItems.map((item) => (
         <ItemStructure
           key={item.id}
           id={item.id}
           name={item.name}
           price={item.price}
+          image={item.image}
         />
       ))}
-    </div>
+    </>
   );
 }
 
@@ -23,6 +24,7 @@ ItemDisplay.propTypes = {
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
       price: PropTypes.number.isRequired,
+      image: PropTypes.string,
     })
   ).isRequired,
 };
