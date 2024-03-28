@@ -1,2 +1,2 @@
-INSERT INTO `basket` VALUES (default, 'Basket 1');
-INSERT INTO `item` VALUES (default, 'Milk', 2.0, 50.0, 1);
+INSERT INTO `basket` VALUES (default, 'Patryk');
+INSERT INTO `item` VALUES (default, 'Milk', 'https://cdn.dribbble.com/users/387221/screenshots/6584182/free-milk-carton-box-packaging-mockup-psd_4x.jpg', 50.0, 1);
