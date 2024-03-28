@@ -19,16 +19,16 @@ const LoginPage = () => {
       <h1 style={{ fontSize: "40px" }}>Login Page</h1>
       <br />
       <form style={{ fontSize: "30px" }} onSubmit={handleSubmit}>
-        <label>
+        <label class="form-label">
           Username
           <br />
-          <input type="text" required />
+          <input class="form-control" type="text" required />
         </label>
         <br />
-        <label>
+        <label class="form-label">
           Password
           <br />
-          <input type="password" required />
+          <input type="password" capture class="form-control" required />
         </label>
         <br />
         <div>
