@@ -11,7 +11,7 @@ function EditItem() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8088/item/get/" + params.id)
+      .get("http://localhost:8089/item/get/" + params.id)
       .then((response) => {
         console.log(response);
         setName(response.data.name);
@@ -23,7 +23,7 @@ function EditItem() {
 
   const editItem = () => {
     axios
-      .put(`http://localhost:8088/item/update/` + params.id, {
+      .put(`http://localhost:8089/item/update/` + params.id, {
         name,
         image,
         price,

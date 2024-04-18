@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useNavigate, useParams} from "react-router";
+import { useNavigate, useParams } from "react-router";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import { Modal, Button } from "react-bootstrap";
 import EditItem from "./EditItem";
 
@@ -11,7 +11,7 @@ function ItemStructure(props) {
   // const navigate = useNavigate();
   // const handleEdit = () => {
   //   navigate("/editItem/" +props.id);}
-  
+
   //Variables for modal
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -26,7 +26,7 @@ function ItemStructure(props) {
 
   const handleAddToBasket = () => {
     axios
-      .patch(`http://localhost:8088/item/add/${props.id}/1`)
+      .patch(`http://localhost:8089/item/add/${props.id}/1`)
       .then(() => {
         navigate("/items");
       })
@@ -35,112 +35,147 @@ function ItemStructure(props) {
 
   const deleteItem = () => {
     axios
-      .delete(`http://localhost:8088/item/delete/${props.id}`)
+      .delete(`http://localhost:8089/item/delete/${props.id}`)
       .then(() => {})
       .catch((error) => alert("Item has already been deleted "));
   };
 
   //prefills input field in edit popup with existing information
   useEffect(() => {
-    axios.get(`http://localhost:8088/item/get/${props.id}`)
-        .then((response) => {
-            console.log(response)
-            setName(response.data.name);
-            setImage(response.data.image);
-            setPrice(response.data.price);
-        })
-        .catch(error => console.error(error))
-}, []);
-
-const editItem = () => {
-  axios.put(`http://localhost:8088/item/update/${props.id}`, {
-      name, image, price
-  })
-      .then(response =>{
-        console.log(response)
+    axios
+      .get(`http://localhost:8089/item/get/${props.id}`)
+      .then((response) => {
+        console.log(response);
+        setName(response.data.name);
+        setImage(response.data.image);
+        setPrice(response.data.price);
       })
-      .catch((error) => console.error(error))
-}
+      .catch((error) => console.error(error));
+  }, []);
 
-const [items, setItems] = useState([]);
-function getItems() {
-  axios.get("http://localhost:8088/item/get")
-    .then((response) => { setItems(response.data) })
-    .catch(console.log);
-}
+  const editItem = () => {
+    axios
+      .put(`http://localhost:8089/item/update/${props.id}`, {
+        name,
+        image,
+        price,
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => console.error(error));
+  };
+
+  const [items, setItems] = useState([]);
+  function getItems() {
+    axios
+      .get("http://localhost:8089/item/get")
+      .then((response) => {
+        setItems(response.data);
+      })
+      .catch(console.log);
+  }
 
   useEffect(() => {
     getItems();
   }, []);
 
-
   return (
     <div className="d-inline-flex" style={{ margin: "20px", maxWidth: "50%" }}>
-    <div id="itemCard" className="col">
-      <div class="card">
-        <div className="card-body">
-        <img id="image" src={props.image} alt="N/A" style={{width: "200px", height: "200px"}}></img>
-        <ul class="list-group list-group-flush card-text">
-          <li class="list-group-item">Name: {props.name} </li>
-          <li class="list-group-item">Price: £{props.price} </li>
-        </ul>
-        <button type="button" onClick={handleAddToBasket} className="btn btn-success ">
-          Add to basket
-        </button>
-        <button type="button" onClick={deleteItem} className="btn btn-danger">Delete</button>
-        {/* <button type="button" onClick={handleEdit} className="btn btn-primary">Edit</button> */}
-        <>
-        <Button variant="primary" onClick={handleShow}>
-          Edit
-        </Button>
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Edit item</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-          <form onSubmit={(e) => {
-                e.preventDefault();
-                editItem();
-            }}>
-              <div class="mb-3 ">
-                <label htmlFor="itemName" class="form-label">Item Name</label>
-                <input
-                    type="text"
-                    onChange={(e) => setName(e.target.value)}
-                    id="itemName"
-                    value={name}
-                    class="form-control"
-                />
-                </div>
-                <div class="mb-3 ">
-                <label htmlFor="itemPrice" class="form-label">Price</label>
-                <input
-                    type="number" 
-                    onChange={(e) => setPrice(e.target.value)}
-                    id="itemPrice"
-                    value={price}
-                    class="form-control"
-                    />
-                </div>
-                <div class="mb-3 ">
-                <label htmlFor="itemImage" class="form-label">Image</label>
-                <input 
-                type="src" 
-                onChange={(e) => setImage(e.target.value)}
-                id="itemImage"
-                value={image}
-                class="form-control"
-                />
-                </div>
-                <button type="submit" onClick={handleClose} class="btn btn-success ">Submit</button>
-            </form>
-          </Modal.Body>
-        </Modal>
-      </>
+      <div id="itemCard" className="col">
+        <div class="card">
+          <div className="card-body">
+            <img
+              id="image"
+              src={props.image}
+              alt="N/A"
+              style={{ width: "200px", height: "200px" }}
+            ></img>
+            <ul class="list-group list-group-flush card-text">
+              <li class="list-group-item">Name: {props.name} </li>
+              <li class="list-group-item">Price: £{props.price} </li>
+            </ul>
+            <button
+              type="button"
+              onClick={handleAddToBasket}
+              className="btn btn-success "
+            >
+              Add to basket
+            </button>
+            <button
+              type="button"
+              onClick={deleteItem}
+              className="btn btn-danger"
+            >
+              Delete
+            </button>
+            {/* <button type="button" onClick={handleEdit} className="btn btn-primary">Edit</button> */}
+            <>
+              <Button variant="primary" onClick={handleShow}>
+                Edit
+              </Button>
+              <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                  <Modal.Title>Edit item</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  <form
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      editItem();
+                    }}
+                  >
+                    <div class="mb-3 ">
+                      <label htmlFor="itemName" class="form-label">
+                        Item Name
+                      </label>
+                      <input
+                        type="text"
+                        onChange={(e) => setName(e.target.value)}
+                        id="itemName"
+                        value={name}
+                        class="form-control"
+                      />
+                    </div>
+                    <div class="mb-3 ">
+                      <label htmlFor="itemPrice" class="form-label">
+                        Price
+                      </label>
+                      <input
+                        type="number"
+                        onChange={(e) => setPrice(e.target.value)}
+                        id="itemPrice"
+                        value={price}
+                        class="form-control"
+                      />
+                    </div>
+                    <div class="mb-3 ">
+                      <label htmlFor="itemImage" class="form-label">
+                        Image
+                      </label>
+                      <input
+                        type="src"
+                        onChange={(e) => setImage(e.target.value)}
+                        id="itemImage"
+                        value={image}
+                        class="form-control"
+                      />
+                    </div>
+                    <button
+                      type="submit"
+                      onClick={handleClose}
+                      class="btn btn-success "
+                    >
+                      Submit
+                    </button>
+                  </form>
+                </Modal.Body>
+              </Modal>
+            </>
+          </div>
         </div>
       </div>
     </div>
-  </div>
   );
 }
 
