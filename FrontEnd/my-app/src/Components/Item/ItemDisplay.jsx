@@ -5,15 +5,16 @@ import ItemStructure from "./ItemStructure";
 function ItemDisplay({ listItems }) {
   return (
     <>
-      {listItems.map((item) => (
-        <ItemStructure
-          key={item.id}
-          id={item.id}
-          name={item.name}
-          price={item.price}
-          image={item.image}
-        />
-      ))}
+      {listItems &&
+        listItems.map((item) => (
+          <ItemStructure
+            key={item.id}
+            id={item.id}
+            name={item.name}
+            price={item.price}
+            image={item.image}
+          />
+        ))}
     </>
   );
 }

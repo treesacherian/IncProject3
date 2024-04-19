@@ -1,7 +1,7 @@
 import React from "react";
 import ItemStructure from "./ItemStructure";
 import { BrowserRouter } from "react-router-dom";
-//todo
+
 describe("<ItemStructure />", () => {
   it("renders", () => {
     // see: https://on.cypress.io/mounting-react
