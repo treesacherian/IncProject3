@@ -4,9 +4,7 @@ function BasketStructure({ id, name, items, image }) {
   return (
     <div>
       <p>ID: {id}</p>
-      <img src={image} alt="placeholder picture of a product">
-        Image:{" "}
-      </img>
+      <img src={image} alt="placeholder picture of a product"></img>
       <p>Name: {name}</p>
       {items && items.length > 0 && (
         <div>

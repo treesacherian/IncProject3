@@ -1,9 +1,13 @@
-import React from 'react'
-import BasketPage from './BasketPage'
-
-describe('<BasketPage />', () => {
-  it('renders', () => {
+import React from "react";
+import BasketPage from "./BasketPage";
+import { BrowserRouter } from "react-router-dom";
+describe("<BasketPage />", () => {
+  it("renders", () => {
     // see: https://on.cypress.io/mounting-react
-    cy.mount(<BasketPage />)
-  })
-})
+    cy.mount(
+      <BrowserRouter>
+        <BasketPage />
+      </BrowserRouter>
+    );
+  });
+});

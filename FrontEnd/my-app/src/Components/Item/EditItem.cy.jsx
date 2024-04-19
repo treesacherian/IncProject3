@@ -1,9 +1,13 @@
-import React from 'react'
-import EditItem from './EditItem'
-
-describe('<EditItem />', () => {
-  it('renders', () => {
+import React from "react";
+import EditItem from "./EditItem";
+import { BrowserRouter } from "react-router-dom";
+describe("<EditItem />", () => {
+  it("renders", () => {
     // see: https://on.cypress.io/mounting-react
-    cy.mount(<EditItem />)
-  })
-})
+    cy.mount(
+      <BrowserRouter>
+        <EditItem />
+      </BrowserRouter>
+    );
+  });
+});

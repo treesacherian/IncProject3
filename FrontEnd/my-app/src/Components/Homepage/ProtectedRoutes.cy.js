@@ -1,12 +1,12 @@
 import React from "react";
-import CreateBasket from "./CreateBasket";
+import ProtectedRoutes from "./ProtectedRoutes";
 import { BrowserRouter } from "react-router-dom";
-describe("<CreateBasket />", () => {
+describe("<ProtectedRoutes />", () => {
   it("renders", () => {
     // see: https://on.cypress.io/mounting-react
     cy.mount(
       <BrowserRouter>
-        <CreateBasket />
+        <ProtectedRoutes />
       </BrowserRouter>
     );
   });
