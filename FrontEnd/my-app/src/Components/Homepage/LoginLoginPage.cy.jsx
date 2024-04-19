@@ -1,9 +1,15 @@
-import React from 'react'
-import LoginPage from './Login'
 
-describe('<LoginPage />', () => {
-  it('renders', () => {
+import React from "react";
+import LoginPage from "./Login";
+import { BrowserRouter } from "react-router-dom";
+describe("<LoginPage />", () => {
+  it("renders", () => {
     // see: https://on.cypress.io/mounting-react
-    cy.mount(<LoginPage />)
-  })
-})
+    cy.mount(
+      <BrowserRouter>
+        <LoginPage />
+      </BrowserRouter>
+    );
+  });
+});
+
