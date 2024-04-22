@@ -23,7 +23,7 @@ pipeline {
             steps {
             
             bat '''
-            cd Bac2End\target     
+            cd Bac2End/target     
            java -jar IncProject1BE-0.0.1-SNAPSHOT.jar
             '''
             
