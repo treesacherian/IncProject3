@@ -22,7 +22,7 @@ pipeline {
         stage('Deliver') {
             steps {
             bat'''
-            cd ../..
+            cd ..\..\..
                 ./jenkins/scripts/deliver.sh
                '''
                 
