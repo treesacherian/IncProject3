@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('Build') { 
         steps {
-               bat'mvn -f Bac2End\pom.xml ,
-                mvn -B -DskipTests clean package' 
+        sh'cd Back2End'
+               sh'mvn -B -DskipTests clean package' 
             }
         }
     }
