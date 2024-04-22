@@ -23,7 +23,7 @@ pipeline {
             steps {
             
             bat '''
-            cd ../../../..
+            cd ../../../../..
             cd Program Files/Git/usr/bin
             
             ./jenkins/scripts/deliver.sh
