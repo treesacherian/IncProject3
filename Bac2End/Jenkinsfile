@@ -4,8 +4,6 @@ pipeline {
         stage('Build') { 
         steps {
                 bat 'cd Bac2End' 
-            }
-            steps {
                 bat 'mvn -B -DskipTests clean package' 
             }
         }
