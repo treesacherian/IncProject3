@@ -2,9 +2,11 @@ pipeline {
     agent any
     stages {
         stage('Build') { 
+        steps {
+                bat 'cd Bac2End' 
+            }
             steps {
-                bat 'cd Bac2End,
-                mvn -B -DskipTests clean package' 
+                bat 'mvn -B -DskipTests clean package' 
             }
         }
     }
