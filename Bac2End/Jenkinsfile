@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('Build') { 
         steps {
-                 bat 'C:\ProgramData\Jenkins\.jenkins\workspace\IncPro3Pipeline\Bac2End\mvn -B -DskipTests clean package' 
+               bat'mvn -f C:\ProgramData\Jenkins\.jenkins\workspace\IncPro3Pipeline\Bac2End\pom.xml '
+                bat 'mvn -B -DskipTests clean package' 
             }
         }
     }
