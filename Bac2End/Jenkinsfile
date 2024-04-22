@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'mvn -B -DskipTests clean package' 
+                sh 'Bac2End/mvn -B -DskipTests clean package' 
             }
         }
     }
