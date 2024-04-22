@@ -11,7 +11,10 @@ pipeline {
         }
          stage('Test') { 
             steps {
-                sh 'mvn test' 
+                bat'''
+               cd Bac2End 
+                mvn test
+               '''  
             }
             post {
                 always {
