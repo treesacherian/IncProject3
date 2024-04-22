@@ -18,8 +18,10 @@ import com.Inc.Project1.BE.domain.Item;
 import com.Inc.Project1.BE.service.ItemServices;
 
 @RestController
-@CrossOrigin
+//@CrossOrigin
 @RequestMapping("/item")
+@CrossOrigin
+
 public class ItemController {
 
 	private ItemServices service;

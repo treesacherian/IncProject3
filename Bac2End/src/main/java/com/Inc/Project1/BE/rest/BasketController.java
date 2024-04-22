@@ -16,9 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.Inc.Project1.BE.domain.Basket;
 import com.Inc.Project1.BE.service.BasketService;
 
-@CrossOrigin
-@RequestMapping("/basket")
+//@CrossOrigin
 @RestController
+@RequestMapping("/basket")
+//@RestController
+@CrossOrigin
 public class BasketController {
 
 	private BasketService service;
