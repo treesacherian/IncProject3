@@ -7,13 +7,13 @@ function BasketsDisplay() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8088/basket/get")
+      .get("http://localhost:8089/basket/get")
       .then((response) => setBaskets(response.data))
       .catch((error) => console.error(error));
   }, []);
 
   const deleteBasket = () => {
-    axios.delete(`http://localhost:8088/basket/delete/1`).then(() => {});
+    axios.delete(`http://localhost:8089/basket/delete/1`).then(() => {});
   };
 
   const calculateTotalPrice = (items) => {

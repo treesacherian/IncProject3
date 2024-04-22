@@ -9,7 +9,7 @@ function PageForItem() {
 
   function getItems() {
     axios
-      .get("http://localhost:8088/item/get")
+      .get("http://localhost:8089/item/get")
       .then((response) => {
         setItems(response.data);
       })

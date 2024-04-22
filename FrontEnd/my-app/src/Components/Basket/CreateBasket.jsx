@@ -9,7 +9,7 @@ function CreateBasket() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8088/basket/get")
+      .get("http://localhost:8089/basket/get")
       .then((response) => setBaskets(response.data))
       .catch((error) => console.error(error));
   }, []);
@@ -18,7 +18,7 @@ function CreateBasket() {
     e.preventDefault();
 
     axios
-      .post("http://localhost:8088/basket/create", { name, items: [] })
+      .post("http://localhost:8089/basket/create", { name, items: [] })
       .then((response) => {
         setName("");
         navigate("/items");
