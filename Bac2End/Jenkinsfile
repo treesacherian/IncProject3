@@ -16,6 +16,7 @@ pipeline {
                 mvn test
                '''  
             }
+            }
             
             
         stage('Deliver') {
