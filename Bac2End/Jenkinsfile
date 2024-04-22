@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                bat 'cd Bac2End'
-                bat'mvn -B -DskipTests clean package' 
+                bat 'cd Bac2End
+                mvn -B -DskipTests clean package' 
             }
         }
     }
