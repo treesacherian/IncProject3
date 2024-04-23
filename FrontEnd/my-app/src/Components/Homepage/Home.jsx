@@ -6,7 +6,7 @@ import EditItem from "../Item/EditItem";
 function Home() {
   return (
     <div style={{ paddingTop: "30px" }}>
-      <h1>"boop jenkins test"</h1>
+      <h1>"Aldi is better than LIDL"</h1>
     </div>
   );
 }
