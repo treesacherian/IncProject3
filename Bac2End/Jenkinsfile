@@ -1,0 +1,37 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') { 
+        steps {
+               bat '''
+               cd Bac2End
+               mvn -B -DskipTests clean package
+               '''
+            }
+        }
+         stage('Test') { 
+            steps {
+                bat'''
+               cd Bac2End 
+                mvn test
+               '''  
+            }
+            }
+            
+            
+        stage('Deliver') {
+            steps {
+            
+            bat '''
+            cd Bac2End/target     
+           java -jar IncProject1BE-0.0.1-SNAPSHOT.jar
+            '''
+            
+               
+                
+            }
+        }    
+            
+        
+    }
+}
